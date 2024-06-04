@@ -1,0 +1,46 @@
+.header-container .header .header__gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .595) 6.67%, rgba(0, 0, 0, .579) 13.33%, rgba(0, 0, 0, .551) 20%, rgba(0, 0, 0, .512) 26.67%, rgba(0, 0, 0, .461) 33.33%, rgba(0, 0, 0, .401) 40%, rgba(0, 0, 0, .334) 46.67%, rgba(0, 0, 0, .266) 53.33%, rgba(0, 0, 0, .199) 60%, rgba(0, 0, 0, .139) 66.67%, rgba(0, 0, 0, .088) 73.33%, rgba(0, 0, 0, .049) 80%, rgba(0, 0, 0, .021) 86.67%, rgba(0, 0, 0, .005) 93.33%, transparent);
+}
+
+.Geotag_iconContainer__3Hmum {
+  position: relative;
+  width: 2.3rem;
+  height: 2.3rem;
+  cursor: pointer;
+  opacity: .3;
+}
+
+.Geotag_iconContainer__3Hmum svg {
+  position: absolute;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+}
+
+.Geotag_continentsContainer__cux05 {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.Geotag_continentsContainer__cux05 .Geotag_continents__eQ0qc {
+  animation: Geotag_scroll1__BEeD_ 3s linear 0s infinite;
+  position: absolute;
+  height: 100%;
+  padding-block-start: .1rem;
+  padding-block-end: .1rem;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+.Geotag_continentsContainer__cux05 .Geotag_continents__eQ0qc svg {
+  width: 3.6rem;
+  height: 100%;
+}
+
+.Geotag_continentsAnimation2__Yrtuz {
+  animation: Geotag_scroll2__qzGmG 3s linear 0s infinite;
+}
