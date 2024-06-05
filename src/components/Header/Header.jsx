@@ -6,11 +6,11 @@ import './Header-Styles/header.css'
 export default function Header() {
   return (
     <div className='header-container w-full'>
-      <header className="header relative px-[70px]">
-        <div className="header__gradient w-full h-[186px]"></div>
+      <header className="header relative w-full">
+        <div className="header__gradient w-full absolute h-[186px]"></div>
 
-        <div className="header_content absolute top-0 flex w-full h-full ms-0 me-0  justify-between">
-          <div className="header__logo flex items-center w-[21.2rem] h-[84px] grow">
+        <div className="header_content flex ms-0 me-0 h-[84px] items-center justify-between px-[70px]">
+          <div className="header__logo z-10 flex items-center w-[21.2rem] h-[84px] grow">
             <button className="menu_icon">
               <svg width="28px" height="28px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="HeaderNavigationMenu_control-icon__4_ucN" data-tid="Burger">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M21 7.6H3V5.2h18v2.4Zm0 6H3v-2.4h18v2.4Zm0 6H3v-2.4h18v2.4Z" fill="#fff" fill-opacity=".6"></path>
@@ -36,7 +36,27 @@ export default function Header() {
             </div>
           </div>
 
+          <div className="header_center w-[1101px] relative flex justify-center h-[84px]">
+            <div className="header_center_content flex items-center">
+              <nav className="navbar">
+                <ul className="ul flex p-0 font-[700]">
+                  <li className='me-[3.2rem] text-[1.4rem] leading-[2.2rem]'><a href="" className='text-white opacity-[.6]'>Главное</a></li>
+                  <li className='me-[3.2rem] text-[1.4rem] leading-[2.2rem]'><a href="" className='text-white border-b-[.3rem] border-b-[#f50] pb-[1.2rem]'>Магазин</a></li>
+                  <li className='me-[3.2rem] text-[1.4rem] leading-[2.2rem]'><a href="" className='text-white opacity-[.6]'>Каналы</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
 
+          <div className="header_end z-10 w-[312px]">
+            <div className="header_end_content flex items-center">
+              <button className='style_button w-[228px] h-[37px] text-[15px] leading-[1.6rem] py-[9px] px-[18px] rounded-[5.2rem] flex items-center'>
+                Смотреть кино бесплатно
+              </button>
+
+              <a className='text-[21px] text-[#FFFFFF99] py-[2.3px] pl-[2.3px] ml-[15px]' href="">Войти</a>
+            </div>
+          </div>
         </div>
       </header>
     </div>

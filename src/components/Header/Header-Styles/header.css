@@ -44,3 +44,14 @@
 .Geotag_continentsAnimation2__Yrtuz {
   animation: Geotag_scroll2__qzGmG 3s linear 0s infinite;
 }
+
+.style_button {
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(#ff5c4d), color-stop(26.56%, #eb469f), color-stop(75%, #8341ef), to(#3f68f9));
+  background: -webkit-linear-gradient(left, #ff5c4d, #eb469f 26.56%, #8341ef 75%, #3f68f9);
+  background: linear-gradient(90deg, #ff5c4d, #eb469f 26.56%, #8341ef 75%, #3f68f9);
+  -webkit-transition: background .2s ease, -webkit-transform .2s ease;
+  transition: background .2s ease, -webkit-transform .2s ease;
+  transition: background .2s ease, transform .2s ease;
+  transition: background .2s ease, transform .2s ease, -webkit-transform .2s ease;
+}
