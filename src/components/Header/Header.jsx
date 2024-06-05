@@ -59,6 +59,8 @@ export default function Header() {
           </div>
         </div>
       </header>
+
+      <HeaderBackground />
     </div>
   )
 }
