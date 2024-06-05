@@ -45,6 +45,28 @@
   animation: Geotag_scroll2__qzGmG 3s linear 0s infinite;
 }
 
+@keyframes Geotag_scroll1__BEeD_ {
+  0% {
+    position: absolute;
+    right: 0;
+  }
+  100% {
+    position: absolute;
+    right: 240%;
+  }
+}
+
+@keyframes Geotag_scroll2__qzGmG {
+  0% {
+    position: absolute;
+    right: 0;
+  }
+  100% {
+    position: absolute;
+    right: 240%;
+  }
+}
+
 .style_button {
   color: #fff;
   background: -webkit-gradient(linear, left top, right top, from(#ff5c4d), color-stop(26.56%, #eb469f), color-stop(75%, #8341ef), to(#3f68f9));
