@@ -3,11 +3,14 @@ import React from 'react'
 // css import
 import './Header-Styles/header.css'
 
+// components import
+import HeaderBackground from './Header-Bg/Header_Background'
+
 export default function Header() {
   return (
-    <div className='header-container w-full'>
+    <div className='header-container relative w-full'>
       <header className="header relative w-full">
-        <div className="header__gradient w-full absolute h-[186px]"></div>
+        <div className="header__gradient z-10 w-full absolute h-[186px]"></div>
 
         <div className="header_content flex ms-0 me-0 h-[84px] items-center justify-between px-[70px]">
           <div className="header__logo z-10 flex items-center w-[21.2rem] h-[84px] grow">
@@ -36,7 +39,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="header_center w-[1101px] relative flex justify-center h-[84px]">
+          <div className="header_center z-10 w-[1101px] relative flex justify-center h-[84px]">
             <div className="header_center_content flex items-center">
               <nav className="navbar">
                 <ul className="ul flex p-0 font-[700]">

@@ -77,3 +77,26 @@
   transition: background .2s ease, transform .2s ease;
   transition: background .2s ease, transform .2s ease, -webkit-transform .2s ease;
 }
+
+
+
+
+.title h1 {
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: -10px;
+  font-weight: 700;
+}
+
+.title h1, .title div h1 {
+  opacity: .8;
+}
+
+.title div {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: -1px;
+  font-weight: 100;
+}
+
+.see-now-button {
+  background: linear-gradient(135deg,#f50 69.91%,#d6bb00);;
+}
