@@ -1,5 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
+
+// components import
 import Card from '../Card/Card';
+
+// css import
+import './Home-styles/home.css'
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
