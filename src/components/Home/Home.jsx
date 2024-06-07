@@ -1,4 +1,6 @@
 import React from 'react'
+
+// components import
 import Category from '../Category/Category'
 
 export default function Home() {
