@@ -27,9 +27,27 @@ export default function Home() {
   return (
     <div className='Home w-full absolute top-[95vh] overflow-x-hidden'>
       <div className="Home__content px-[70px] overflow-hidden">
+
         <h2 className='text-white text-[32px] font-[700]'>Популярные</h2>
+
         <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
           {movies.slice(20, 40).map((movie) => (
+            <Card key={movie.id} data={movie} />
+          ))}
+        </div>
+
+        <h2 className='text-white text-[32px] font-[700] mt-[5rem]'>Новинки</h2>
+
+        <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
+          {movies.slice(10, 20).map((movie) => (
+            <Card key={movie.id} data={movie} />
+          ))}
+        </div>
+
+        <h2 className='text-white text-[32px] font-[700] mt-[5rem]'>Теперь в Магазине</h2>
+
+        <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
+          {movies.slice(15, 35).map((movie) => (
             <Card key={movie.id} data={movie} />
           ))}
         </div>
