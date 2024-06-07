@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import Card from '../Card/Card';
-
-// components import
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,13 +20,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='Home absolute top-[95vh]'>
-      <div className="Home__content px-[70px]">
+    <div className='Home w-full absolute top-[95vh] overflow-x-hidden'>
+      <div className="Home__content px-[70px] overflow-hidden">
         <h2 className='text-white text-[32px] font-[700]'>Популярные</h2>
-        <div className="category__container">
-          <Card />
+        <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
+          {movies.slice(0, 20).map((movie) => (
+            <Card key={movie.id} data={movie} />
+          ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
