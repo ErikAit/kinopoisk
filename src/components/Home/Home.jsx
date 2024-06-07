@@ -29,7 +29,7 @@ export default function Home() {
       <div className="Home__content px-[70px] overflow-hidden">
         <h2 className='text-white text-[32px] font-[700]'>Популярные</h2>
         <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
-          {movies.slice(0, 20).map((movie) => (
+          {movies.slice(20, 40).map((movie) => (
             <Card key={movie.id} data={movie} />
           ))}
         </div>
