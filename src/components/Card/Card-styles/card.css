@@ -1,0 +1,7 @@
+.Card.selected {
+  border: 2px solid white;
+}
+
+.Card:hover {
+  box-shadow: 0px 0px 131px 75px rgba(0,0,0,0.76);
+}

@@ -5,9 +5,13 @@ import Card from '../Card/Card';
 
 // css import
 import './Home-styles/home.css'
+import MovieData from '../Movie-Data/MovieData';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
+  const [filmData, setFilmData] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
   const sliderRef = useRef(null);
 
   useEffect(() => {
@@ -31,25 +35,37 @@ export default function Home() {
         <h2 className='text-white text-[32px] font-[700]'>Популярные</h2>
 
         <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
-          {movies.slice(20, 40).map((movie) => (
-            <Card key={movie.id} data={movie} />
-          ))}
+          {movies.slice(20, 40).map((movie, index) => {
+            return <div key={movie.id} onClick={() => {
+              setFilmData(!filmData)
+              setSelectedMovie(index);
+            }}>
+              <Card data={movie} isClicked={selectedMovie === index} />
+              {
+                filmData && <MovieData data={movie} />
+              }
+            </div>
+          })}
         </div>
 
-        <h2 className='text-white text-[32px] font-[700] mt-[5rem]'>Новинки</h2>
+        <h2 className='text-white text-[32px] font-[700] mt -[5rem]'>Новинки</h2>
 
         <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
-          {movies.slice(10, 20).map((movie) => (
-            <Card key={movie.id} data={movie} />
-          ))}
+          {movies.slice(10, 20).map((movie) => {
+            return <div key={movie.id}>
+              <Card data={movie} />
+            </div>
+          })}
         </div>
 
         <h2 className='text-white text-[32px] font-[700] mt-[5rem]'>Теперь в Магазине</h2>
 
         <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
-          {movies.slice(15, 35).map((movie) => (
-            <Card key={movie.id} data={movie} />
-          ))}
+          {movies.slice(15, 35).map((movie) => {
+            return <div key={movie.id}>
+              <Card data={movie} />
+            </div>
+          })}
         </div>
       </div>
     </div>
