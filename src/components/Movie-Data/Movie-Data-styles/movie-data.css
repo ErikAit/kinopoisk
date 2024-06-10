@@ -1,0 +1,104 @@
+.Movie-data.opened {
+  animation: openMovie .5s backwards alternate;
+}
+
+.Movie-data.closed {
+  animation: closeMovie .5s backwards alternate;
+}
+
+@keyframes openMovie {
+  0% {
+    height: 50px;
+    opacity: 0;
+  } 
+  5% {
+    height: 100px;
+  }
+  10% {
+    height: 150px;
+  }
+  15% {
+    height: 200px;
+  }
+  20% {
+    height: 250px;
+  }
+  30% {
+    height: 300px;
+  }
+  35% {
+    height: 350px;
+  }
+  40% {
+    height: 400px;
+  }
+  50% {
+    height: 500px;
+  }
+  75% {
+    height: 600px;
+  }
+  80% {
+    height: 700px;
+  }
+  90% {
+    height: 701px;
+  }
+  100% {
+    height: 710px;
+    opacity: 1;
+  }
+}
+
+@keyframes closeMovie {
+  0% {
+    height: 710px;
+    opacity: 1;
+  } 
+  5% {
+    height: 701px;
+  }
+  10% {
+    height: 700px;
+  }
+  15% {
+    height: 600px;
+  }
+  20% {
+    height: 500px;
+  }
+  30% {
+    height: 400px;
+  }
+  35% {
+    height: 350px;
+  }
+  40% {
+    height: 300px;
+  }
+  50% {
+    height: 250px;
+  }
+  75% {
+    height: 200px;
+  }
+  80% {
+    height: 150px;
+  }
+  90% {
+    height: 100px;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+
+.movie__backdrop_path {
+  box-shadow: inset 50vw 0px 122px -29px rgba(0,0,0,1);
+}
+
+.spans p {
+  letter-spacing: 2px;
+}
