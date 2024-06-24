@@ -11,7 +11,7 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
   const [filmData, setFilmData] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const [selectedMovieData, setSelectedMovieData] = useState([]);
+  const [selectedMovieData, setSelectedMovieData] = useState(null);
   const [category, setCategory] = useState('about');
 
   const sliderRef = useRef(null);
@@ -24,7 +24,7 @@ export default function Home() {
       const fetch2 = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=d91b4b2e8fb2707acd809975c49bcf87&query=');
       const data2 = await fetch2.json();
 
-      setMovies([...data1.results, ...data2.results]);
+      setMovies([...data1.results, ...data2.results, ...data1.results]);
     };
 
     fetchData();
@@ -34,83 +34,90 @@ export default function Home() {
     setCategory(newCategory);
   }
 
+  const openFilmInfo = (movie, index) => {
+    setFilmData(true);
+    setSelectedMovie(index);
+    setSelectedMovieData(movie);
+    setCategory('about');
+  }
+
   return (
     <div className='Home w-full absolute top-[95vh] overflow-x-hidden'>
       <div className="Home__content px-[70px] overflow-hidden">
 
         <h2 className='text-white text-[32px] font-[700]'>Популярные</h2>
-
         <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
           {movies.slice(20, 40).map((movie, index) => {
             return <div key={movie.id}>
               <Card
                 data={movie}
-                isClicked={selectedMovie === index}
-                openFilmInfo={() => {
-                  setFilmData(true)
-                  setSelectedMovie(index);
-                  setSelectedMovieData(movie)
-                  setCategory('about')
-                }}
+                isClicked={selectedMovie === index + 20}
+                openFilmInfo={() => openFilmInfo(movie, index + 20)}
               />
             </div>
           })}
         </div>
-        {
-          filmData && <MovieData opened={filmData} data={selectedMovieData} closeMovieData={() => {
-            setFilmData(false);
-            setSelectedMovie(null)
-          }} category={category} setCategory={handleChangeCategory} />
+        {filmData && selectedMovie >= 20 && selectedMovie < 40 &&
+          <MovieData
+            opened={filmData}
+            data={selectedMovieData}
+            closeMovieData={() => {
+              setFilmData(false);
+              setSelectedMovie(null)
+            }}
+            category={category}
+            setCategory={handleChangeCategory}
+          />
         }
 
-        <h2 className='text-white text-[32px] font-[700] mt -[5rem]'>Новинки</h2>
-
+        <h2 className='text-white text-[32px] font-[700] mt-[5rem]'>Новинки</h2>
         <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
           {movies.slice(10, 20).map((movie, index) => {
             return <div key={movie.id}>
               <Card
                 data={movie}
-                isClicked={selectedMovie === index}
-                openFilmInfo={() => {
-                  setFilmData(true)
-                  setSelectedMovie(index);
-                  setSelectedMovieData(movie)
-                  setCategory('about')
-                }}
+                isClicked={selectedMovie === index + 10}
+                openFilmInfo={() => openFilmInfo(movie, index + 10)}
               />
             </div>
           })}
         </div>
-        {
-          filmData && <MovieData opened={filmData} data={selectedMovieData} closeMovieData={() => {
-            setFilmData(false);
-            setSelectedMovie(null)
-          }} category={category} setCategory={handleChangeCategory} />
+        {filmData && selectedMovie >= 10 && selectedMovie < 20 &&
+          <MovieData
+            opened={filmData}
+            data={selectedMovieData}
+            closeMovieData={() => {
+              setFilmData(false);
+              setSelectedMovie(null)
+            }}
+            category={category}
+            setCategory={handleChangeCategory}
+          />
         }
 
         <h2 className='text-white text-[32px] font-[700] mt-[5rem]'>Теперь в Магазине</h2>
-
         <div ref={sliderRef} className="category__container my-[1em] gap-[12px] flex overflow-x-auto">
-          {movies.slice(15, 35).map((movie, index) => {
+          {movies.slice(40, 60).map((movie, index) => {
             return <div key={movie.id}>
               <Card
                 data={movie}
-                isClicked={selectedMovie === index}
-                openFilmInfo={() => {
-                  setFilmData(true)
-                  setSelectedMovie(index);
-                  setSelectedMovieData(movie)
-                  setCategory('about')
-                }}
+                isClicked={selectedMovie === index + 40}
+                openFilmInfo={() => openFilmInfo(movie, index + 40)}
               />
             </div>
           })}
         </div>
-        {
-          filmData && <MovieData opened={filmData} data={selectedMovieData} closeMovieData={() => {
-            setFilmData(false);
-            setSelectedMovie(null)
-          }} category={category} setCategory={handleChangeCategory} />
+        {filmData && selectedMovie >= 40 && selectedMovie < 60 &&
+          <MovieData
+            opened={filmData}
+            data={selectedMovieData}
+            closeMovieData={() => {
+              setFilmData(false);
+              setSelectedMovie(null)
+            }}
+            category={category}
+            setCategory={handleChangeCategory}
+          />
         }
       </div>
     </div>
