@@ -12,6 +12,7 @@ export default function Home() {
   const [filmData, setFilmData] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedMovieData, setSelectedMovieData] = useState([]);
+  const [category, setCategory] = useState('about');
 
   const sliderRef = useRef(null);
 
@@ -29,6 +30,10 @@ export default function Home() {
     fetchData();
   }, []);
 
+  const handleChangeCategory = (newCategory) => {
+    setCategory(newCategory);
+  }
+
   return (
     <div className='Home w-full absolute top-[95vh] overflow-x-hidden'>
       <div className="Home__content px-[70px] overflow-hidden">
@@ -45,6 +50,7 @@ export default function Home() {
                   setFilmData(true)
                   setSelectedMovie(index);
                   setSelectedMovieData(movie)
+                  setCategory('about')
                 }}
               />
             </div>
@@ -54,7 +60,7 @@ export default function Home() {
           filmData && <MovieData opened={filmData} data={selectedMovieData} closeMovieData={() => {
             setFilmData(false);
             setSelectedMovie(null)
-          }} />
+          }} category={category} setCategory={handleChangeCategory} />
         }
 
         <h2 className='text-white text-[32px] font-[700] mt -[5rem]'>Новинки</h2>
@@ -69,6 +75,7 @@ export default function Home() {
                   setFilmData(true)
                   setSelectedMovie(index);
                   setSelectedMovieData(movie)
+                  setCategory('about')
                 }}
               />
             </div>
@@ -78,7 +85,7 @@ export default function Home() {
           filmData && <MovieData opened={filmData} data={selectedMovieData} closeMovieData={() => {
             setFilmData(false);
             setSelectedMovie(null)
-          }} />
+          }} category={category} setCategory={handleChangeCategory} />
         }
 
         <h2 className='text-white text-[32px] font-[700] mt-[5rem]'>Теперь в Магазине</h2>
@@ -93,6 +100,7 @@ export default function Home() {
                   setFilmData(true)
                   setSelectedMovie(index);
                   setSelectedMovieData(movie)
+                  setCategory('about')
                 }}
               />
             </div>
@@ -102,7 +110,7 @@ export default function Home() {
           filmData && <MovieData opened={filmData} data={selectedMovieData} closeMovieData={() => {
             setFilmData(false);
             setSelectedMovie(null)
-          }} />
+          }} category={category} setCategory={handleChangeCategory} />
         }
       </div>
     </div>
