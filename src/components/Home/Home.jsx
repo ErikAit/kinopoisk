@@ -6,6 +6,7 @@ import Card from '../Card/Card';
 // css import
 import './Home-styles/home.css'
 import MovieData from '../Movie-Data/MovieData';
+import Footer from '../Footer/Footer';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -150,7 +151,7 @@ export default function Home() {
 
         <h2 className='text-white text-[32px] font-[700] mt-[1.7rem]'>Жанры</h2>
 
-        <div className='genres flex py-[18px] gap-[10px] overflow-x-scroll'>
+        <div className='genres flex py-[18px] gap-[10px]'>
           <div className='h-[288px] bg-[url(https://avatars.mds.yandex.net/get-ott/1534341/2a000001843847ce092f99de54ec03f9908f/720x360)]'></div>
 
           <div className='h-[288px] bg-[url(https://avatars.mds.yandex.net/get-ott/223007/2a0000018438302568b271ccc82563762fda/720x360)]'></div>
@@ -229,6 +230,8 @@ export default function Home() {
           />
         }
       </div>
+
+      <Footer />
     </div>
   );
 }
