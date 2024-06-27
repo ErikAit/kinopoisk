@@ -11,25 +11,29 @@ export default function MovieData({ data, opened, closeMovieData, category, setC
       }}
         className={`movie__backdrop_path w-full h-full relative`}>
         <div className='pt-[30px] flex justify-center gap-[20px]'>
-          <p onClick={() => setCategory('about')} className={`${category === 'about' ? 'bg-gray-700' : ''} py-[10px] px-[6px] rounded-lg w-[100px] flex justify-center`}>О фильме</p>
-          <p onClick={() => setCategory('detalis')} className={`${category === 'detalis' ? 'bg-gray-700' : ''} py-[10px] px-[6px] rounded-lg w-[100px] flex justify-center`}>Детали</p>
+          <p onClick={() => setCategory('about')} className={`${category === 'about' ? 'bg-gray-800' : ''} py-[10px] cursor-pointer px-[6px] rounded-lg w-[100px] flex justify-center`}>О фильме</p>
+          <p onClick={() => setCategory('detalis')} className={`${category === 'detalis' ? 'bg-gray-800' : ''} py-[10px] cursor-pointer px-[6px] rounded-lg w-[100px] flex justify-center`}>Детали</p>
         </div>
-        <div onClick={closeMovieData} className="close absolute right-[30px] top-[30px] fill-white">
+
+        <div onClick={closeMovieData} className="close cursor-pointer absolute right-[30px] top-[30px] fill-white">
           <svg width="28px" height="28px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="styles_close-icon__tSnUF" data-tid="SliderDownClose"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.303 11.999 4.15 5.847 5.848 4.15 12 10.302 18.15 4.15l1.697 1.697L13.697 12l6.151 6.151-1.697 1.697L12 13.696l-6.152 6.151-1.697-1.697L10.303 12Z"></path></svg>
         </div>
+
         <div className='flex justify-between'>
           <div className="title">
             <h2 className='text-[42px] pt-[70px] font-[700]'>{data.title}</h2>
+
             <div className="spans flex gap-3">
               <p className='text-green-600'>{data.vote_average.toString().slice(0, 3)}</p>
-              <p className='opacity-[.5] font-normal'>{data.release_date.toString().slice(0, 4)},</p>
-              <p className='opacity-[.5] font-normal'>драма,</p>
-              <p className='opacity-[.5] font-normal'>биография</p>
-              <p className='opacity-[.5] font-normal'>Швеция</p>
-              <p className='opacity-[.5] font-normal'>1ч</p>
-              <p className='opacity-[.5] font-normal'>37мин</p>
-              <p className='opacity-[.5] font-normal'>18+</p>
+              <p className='opacity-[.5]'>{data.release_date.toString().slice(0, 4)},</p>
+              <p className='opacity-[.5]'>драма,</p>
+              <p className='opacity-[.5]'>биография</p>
+              <p className='opacity-[.5]'>Швеция</p>
+              <p className='opacity-[.5]'>1ч</p>
+              <p className='opacity-[.5]'>37мин</p>
+              <p className='opacity-[.5]' >18+</p>
             </div>
+
             <div className='flex items-center'>
               <div className='w-[28px] h-[18px] text-[12px] font-[400] border-[1px] border-white flex items-center justify-center opacity-[.5]'>{data.vote_average.toString().slice(0, 3)}</div>
 
@@ -43,9 +47,10 @@ export default function MovieData({ data, opened, closeMovieData, category, setC
                 <span className='ml-2'>Rus, Eng</span>
               </p>
             </div>
+
             <div className="lorem">
               <div className='text-[20px] m-0 w-[581px]'>
-                Тернистый путь к успеху суперзвезды футбола <br /> Златана Ибрагимовича. Байопик, снятый по мировому бестселлеру
+                <p>Тернистый путь к успеху суперзвезды футбола <br /> Златана Ибрагимовича. Байопик, снятый по мировому бестселлеру</p>
               </div>
             </div>
 
@@ -56,10 +61,10 @@ export default function MovieData({ data, opened, closeMovieData, category, setC
                   <svg className='pr-[6px]' width="2.1rem" height="2.1rem" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" data-tid="Play">
                     <path d="M6 3.375L21 12L6 20.625V3.375Z" fill="white"></path>
                   </svg>
-                  Купить и смотреть
+                  <span>Купить и смотреть</span>
                 </button>
 
-                <button className='px-[32px] h-[70px] text-[1.5rem] rounded-[45px] bg-[#1F1F1FF2]'>О фильме</button>
+                <button className='px-[32px] h-[70px] text-[1.5rem] rounded-[45px] bg-[#1F1F1FF2]'><span>О фильме</span></button>
 
                 <button>
                   <svg className='fill-white bg-[#1F1F1FF2] px-[21px] h-[70px] w-[70px] rounded-full' width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-tid="Bookmark">

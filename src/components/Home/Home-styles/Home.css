@@ -1,3 +1,20 @@
 .category__container::-webkit-scrollbar {
   display: none;
 }
+
+.category__container {
+  scroll-behavior: smooth;
+}
+
+/* .slider-controls:hover { */
+  /* box-shadow: 0px 0px 144px 76px rgba(0,0,0,0.75); */
+  /* z-index: 30; */
+/* } */
+
+.genres div {
+  width: 288px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border: 1px solid rgb(10, 10, 10)
+}
