@@ -90,8 +90,8 @@ export default function Home() {
         <h2 className='text-white text-[32px] font-[700] mt-[1.7rem]'>Новинки</h2>
         <div className='relative'>
           <div className="slider-controls absolute flex justify-between items-center w-full top-[35%]">
-            <i onClick={() => scrollLeft(0)} class='bx bx-chevron-left text-white text-[80px] z-10 relative right-[70px] cursor-pointer'></i>
-            <i onClick={() => scrollRight(0)} class='bx bx-chevron-right text-white text-[80px] z-10 relative left-[70px] cursor-pointer'></i>
+            <i onClick={() => scrollLeft(1)} class='bx bx-chevron-left text-white text-[80px] z-10 relative right-[70px] cursor-pointer'></i>
+            <i onClick={() => scrollRight(1)} class='bx bx-chevron-right text-white text-[80px] z-10 relative left-[70px] cursor-pointer'></i>
           </div>
           <div ref={(el) => sliderRefs.current[1] = el} className="category__container gap-[12px] flex overflow-x-auto">
             {movies.slice(10, 20).map((movie, index) => {
@@ -121,8 +121,8 @@ export default function Home() {
         <h2 className='text-white text-[32px] font-[700] mt-[1.7rem]'>Теперь в Магазине</h2>
         <div className='relative'>
           <div className="slider-controls absolute flex justify-between items-center w-full top-[35%]">
-            <i onClick={() => scrollLeft(0)} class='bx bx-chevron-left text-white text-[80px] z-10 relative right-[70px] cursor-pointer'></i>
-            <i onClick={() => scrollRight(0)} class='bx bx-chevron-right text-white text-[80px] z-10 relative left-[70px] cursor-pointer'></i>
+            <i onClick={() => scrollLeft(2)} class='bx bx-chevron-left text-white text-[80px] z-10 relative right-[70px] cursor-pointer'></i>
+            <i onClick={() => scrollRight(2)} class='bx bx-chevron-right text-white text-[80px] z-10 relative left-[70px] cursor-pointer'></i>
           </div>
           <div ref={(el) => sliderRefs.current[2] = el} className="category__container gap-[12px] flex overflow-x-auto">
             {movies.slice(40, 60).map((movie, index) => {
